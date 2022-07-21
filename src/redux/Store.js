@@ -1,18 +1,19 @@
-import {createStore, combineReducers, applyMiddleware} from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import {composeWithDevTools} from 'redux-devtools-extension';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 //Ducks
-import DuckExampleReducer from './DuckExample';
+import UserReducer, { readSessionAction } from './UserDuck';
+import AppReducer from './AppDuck';
 
 // Combine reducers
 const rootReducer = combineReducers({
-    exampleReducer: DuckExampleReducer
+    app: AppReducer,
+    user: UserReducer
 })
 
-export default function generateStore(){
+export default function generateStore() {
     const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
-    //Add functions Action middleware
-    //Example readUserAction()(store.despatch)
-    return store;
+    readSessionAction()(store.dispatch)
+    return store
 };

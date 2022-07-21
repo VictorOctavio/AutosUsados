@@ -1,0 +1,99 @@
+.informacionUserWrapper {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: rgb(68, 68, 68);
+}
+
+.informacionDataUser {
+  width: 30%;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 50px 10px;
+}
+
+/* IMAGE INPUT */
+.informacionDataUserImgContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+
+.informacionDataUserImgContainer .informacionDataUserImgForm{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 5%;
+}
+.informacionDataUserImgContainer .inputUpdateAvatar {
+  width: 100px;
+  height: 100px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.informacionDataUser .informacionDataUserImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border-bottom: 5px solid rgb(238, 111, 72);
+}
+
+.informacionDataUserForm {
+  width: 100%;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.informacionDataUserForm .informacionDataUserDivInput {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.informacionDataUserForm .informacionDataUserLabel {
+  color: tomato;
+  font-weight: 300;
+}
+
+.informacionDataUserForm .informacionDataUserinput {
+  border: 1px solid rgb(102, 102, 102);
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 17px;
+  color: white;
+  box-shadow: none;
+  background-color: inherit;
+}
+
+.informacionDataUserinput:focus {
+  background-color: rgba(0, 0, 0, 0.226);
+}
+
+.informacionPublicaciones {
+  padding: 50px 10px;
+}
+
+@media only screen and (max-width: 1000px){
+  .informacionDataUser {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 650px){
+  .informacionDataUser {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 400px){
+  .informacionDataUser {
+    width: 100%;
+  }
+}

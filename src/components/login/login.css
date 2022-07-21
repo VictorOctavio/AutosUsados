@@ -1,0 +1,180 @@
+.login{
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+.loginWrapper{
+    min-height: 650px;
+    box-shadow: -1px -2px 17px 0px rgba(0, 0, 0, 0.212);
+    width: 68%;
+    margin: 0px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.loginForm{
+    padding: 50px 20px;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+}
+
+.loginForm .titleSaludo{
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+.loginForm .formLogin{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.formLogin .loginFormTitle{
+    font-size: 25px;
+    font-weight: 300;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.formLogin .inputDiv{
+    flex-direction: column;
+    display: flex;
+    margin: 10px 0;
+}
+
+.inputDiv .labelInputDiv{
+    font-weight: 400;
+    text-transform: capitalize;
+    color: rgb(202, 45, 17);
+}
+
+.inputDiv .input-{
+    border: none;
+    padding: 5px 3px;
+    margin: 3px 0;
+    border-bottom: 1px solid rgb(214, 214, 214);
+}
+
+.formLogin .forget{
+    text-align: right;
+    margin: 5px 0;
+    cursor: pointer;
+    font-weight: 300;
+}
+.formLogin .forget:hover{color: tomato;}
+
+.formLogin .changeInicio{
+    text-align: center;
+    padding: 10px 0;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.loginImage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(11, 1, 22);
+    position: relative;
+    transition: 1s;
+}
+
+.loginImage .image{
+    width: 100%;
+    padding: 50px;
+}
+
+.loginImage .resMessage{
+    position: absolute;
+    color: rgb(255, 255, 255);
+    top: 62%;
+    width: 53%;
+    font-weight: 600;
+    left: 8%;
+    padding: 20px 10px;
+    text-align: center;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+
+@media only screen and (max-width: 1500px) {
+    .loginWrapper {
+      width: 99%;
+      margin: 50px auto;
+    }
+  }
+
+@media only screen and (max-width: 1000px) {    
+    .loginForm{
+        padding: 10px;
+    }
+    
+    .loginForm .titleSaludo{
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .loginForm .formLogin{
+        width: 100%;
+    }
+
+    .formLogin .loginFormTitle{
+        font-size: 20px;
+    }
+
+    .formLogin .forget, .changeInicio{
+        font-size: 14px;
+    }
+
+    .loginImage .resMessage{
+        top: 10%;
+        width: 95%;
+        left: 2.5%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .loginWrapper{
+        grid-template-columns: 1fr;
+    }
+
+    .loginForm .titleSaludo{display: none;}
+
+
+    .formLogin .loginFormTitle{
+        margin-bottom: 10px;
+        margin-top: 20px;
+    }
+
+    .loginImage {
+        height: 200px;
+    }
+
+    .loginImage .image{
+        padding: 0;
+        width: 200px;
+    }
+
+    .loginImage .resMessage{
+        top: 105%;
+        width: 98%;
+        left: 1%;
+        border: 1px solid #ccc;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .loginImage {
+        display: flex;
+        justify-content: flex-end;
+    }
+}

@@ -1,0 +1,107 @@
+.carousel {
+  max-width: 100%;
+  margin-left: 16%;
+  margin-top: 240px;
+}
+
+.carouselWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.carouselRecomendaciones{
+  margin-top: 3rem;
+}
+
+/* INSTAGRAM FOTOS */
+.carouselClient{
+  margin-top: 100px;
+  position: relative;
+}
+
+
+.carouselTitle {
+  font-size: 32px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #2b2377;
+}
+
+.carouselTitle .hashtag {
+  font-size: 16px;
+}
+
+.clientesCaroulsel {
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  gap: 10px;
+  scroll-behavior: smooth;
+}
+.carouselClient .carouselClientArrow{
+  opacity: 0.5;
+  position: absolute;
+  border: none;
+  top: 50%;
+  background-color: rgba(0, 0, 0, 0.568);
+  border-radius: 2px;
+}
+.carouselClient .carouselClientArrow:hover{
+  background-color: rgba(0, 0, 0, 0.747);
+  opacity: 1;
+}
+
+.carouselClient .carouselClientArrowItem {
+  color: white;
+  font-size: 40px;
+}
+
+.carouselClient .carouselClientArrow.left {
+  left: 1%;
+}
+.carouselClient .carouselClientArrow.right{
+  right: 1%;
+}
+
+
+.clienteCaroulsel {
+  position: relative;
+}
+
+.clienteCaroulsel .clienteImage {
+  height: 270px;
+  width: 270px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.clienteCaroulsel .carouselIcon {
+  cursor: pointer;
+  background-color: white;
+  position: absolute;
+  display: flex;
+  bottom: 5px;
+  left: 5px;
+  padding: 3px;
+  border-radius: 3px;
+  align-items: center;
+}
+
+@media only screen and (max-width: 1000px) {
+  .carousel{
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .carouselTitle {
+    font-size: 25px;
+  }
+  .carouselTitle .hashtag {
+    font-size: 14px;
+}
+}

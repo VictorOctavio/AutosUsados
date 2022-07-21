@@ -1,0 +1,226 @@
+.messagesUserWrapper {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 10px;
+  grid-template-rows: 1fr;
+  height: 100vh;
+}
+
+/* CHAT MESSAGE IZQUIERDA */
+.chatActive {
+  box-shadow: 0px 4px 18px -3px rgba(0, 0, 0, 0.425);
+  margin: auto 0;
+  height: 98%;
+  margin-left: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.chatActiveHeader {
+  height: 60px;
+  background-color: rgb(37, 37, 37);
+  padding: 10px 5px;
+}
+
+.chatActiveBody {
+  height: calc(100vh - 130px);
+  overflow: auto;
+  background-color: rgba(46, 46, 46, 0.116);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 5px;
+  padding: 10px;
+}
+
+.chatActiveBody .chatSended,
+.chatRecived {
+  display: flex;
+  flex-direction: column;
+}
+
+.chatActiveBody .chatSended {
+  align-items: flex-end;
+}
+.chatActiveBody .chatRecived {
+  align-items: flex-start;
+}
+
+.chatSendedContent,
+.chatRecivedContent {
+  padding: 5px 15px;
+  border-radius: 10px;
+  max-width: 60%;
+}
+
+.chatSendedContent .horaMessage,
+.chatRecivedContent .horaMessage {
+  font-weight: 600;
+  float: right;
+  margin-top: -1px;
+}
+
+.chatSendedContent {
+  background-color: #ccc;
+  color: #000;
+}
+
+.chatRecivedContent {
+  background-color: rgb(37, 37, 37);
+  color: #fff;
+}
+
+.chatSendedContentP{
+  margin-bottom: 0;
+  line-height: 19px;
+}
+
+/* STYLES SEND NEW MESSAGE */
+.chatActiveFooter {
+  height: 45px;
+  position: relative;
+  background-color: rgba(46, 46, 46, 0.116);
+}
+
+.chatActiveFooter .inputSendMessageChat {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border: none;
+  color: rgba(0, 0, 0, 0.726);
+  width: 95.5%;
+}
+.chatActiveFooter .SendMessageChatBtn {
+  position: absolute;
+  background-color: #000;
+  top: -1px;
+  right: 0;
+  height: 108%;
+  border: none;
+  width: 45px;
+  border-radius: 3px;
+}
+.chatActiveFooter .SendMessageChatIcon {
+  color: tomato;
+  font-size: 20px;
+}
+.chatActiveFooter .SendMessageChatBtn:hover .SendMessageChatIcon {
+  color: white;
+}
+
+/* LISTA MENSAGE DERECHA */
+.messagesList {
+  width: 100%;
+  margin: auto 0;
+  height: 98%;
+  box-shadow: 0px 4px 18px -3px rgba(0, 0, 0, 0.425);
+  overflow: auto;
+}
+.messagesList .messagesListTitlte {
+  margin: 20px 5px;
+  font-size: 26px;
+}
+.messagesList .messagesListUsers {
+  display: flex;
+  padding: 5px;
+  flex-direction: column;
+  gap: 1px;
+  width: 100%;
+}
+
+/* MENSAJE LI USUER */
+.messagesList .messagesListUsers .messageListUser {
+  list-style: none;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px;
+  transition: 0.2s;
+}
+.messagesList .messagesListUsers .messageListUser:hover {
+  background-color: rgb(223, 223, 223);
+}
+
+.userInformacionMessage {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.userInformacionMessage .backMobile {
+  color: white;
+  cursor: pointer;
+  display: none;
+  font-size: 20px;
+}
+.userInformacionMessage .userInformacionMessageIMG {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.messagesList .messagesListUsers .messageListUser .messageListTexto .texto {
+  margin: 0;
+  color: rgb(107, 107, 107);
+  width: 95%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.messagesList .messagesListUsers .messageListUser .messageListTexto .hours {
+  font-weight: 600;
+  color: #000;
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .messagesUserWrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .chatSendedContent,
+  .chatRecivedContent {
+    max-width: 90%;
+  }
+
+  .chatSendedContent .horaMessage,
+  .chatRecivedContent .horaMessage {
+    font-size: 11px;
+  }
+
+  .chatActiveFooter .inputSendMessageChat {
+    width: 87%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .messagesUserWrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr;
+    position: relative;
+  }
+
+  .chatActive {
+    margin: 0;
+    height: 100vh;
+    position: absolute;
+    transform: translateX(100%);
+    transition: 0.2s ease all;
+    z-index: 2;
+  }
+  .chatActive.active {
+    transform: translateX(0%);
+  }
+  .chatActiveBody {
+    background-color: white;
+  }
+
+  .messagesList {
+    height: 100vh;
+    z-index: 1;
+    background-color: white;
+  }
+  .userInformacionMessage .backMobile {
+    display: block;
+  }
+}

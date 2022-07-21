@@ -1,0 +1,442 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,900;1,300&family=The+Nautigal&display=swap");
+
+.navbar {
+  position: sticky !important;
+  top: 0;
+  background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  z-index: 3000;
+}
+
+.navbarWrapper {
+  height: 100%;
+  width: 68%;
+  margin: 0 auto;
+}
+
+.navbarWrapper .contenedorEnlaces {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid rgb(91, 94, 107);
+}
+
+.contenedorEnlaces .logotipo {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 18px;
+  min-width: 120px;
+  border: 1px solid transparent;
+  transition: 0.3s;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+.contenedorEnlaces .logotipo:hover {
+  border: 1px solid #ccc;
+}
+
+.contenedorEnlaces .logotipo .logotiposCategorias {
+  font-size: 14px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 10px;
+  color: tomato;
+}
+
+.logotiposCategorias .logotiposCategoriasIcon {
+  margin-left: 5px;
+  position: relative;
+  top: 1px;
+}
+
+.contenedorEnlaces .enlaces {
+  display: flex;
+  gap: 10px;
+}
+
+.contenedorEnlaces .enlaces .enlacesLink {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 10px;
+  text-transform: capitalize;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 400;
+}
+
+.contenedorEnlaces .enlaces .enlacesLink:hover {
+  border-color: #ccc;
+}
+
+.BtnMobile {
+  display: none;
+  justify-content: space-between;
+}
+.BtnMobile .BtnMobileIcon {
+  cursor: pointer;
+  color: white;
+  font-size: 35px;
+}
+
+.btn-regresar{
+  display: none !important;
+}
+
+
+.prueba{
+  position: fixed;
+  left: 0;
+  top: 8%;
+  width: 100%;
+  background-image:  linear-gradient(to right, #0f0c29, #302b63, #24243e);
+}
+
+
+/* BUSCARDOR */
+.btn-search {
+  right: 6px;
+  top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid transparent;
+}
+
+.contenedorSearch {
+  padding: 20px 0px;
+  width: 68%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.contenedorSearch input {
+  padding: 10px;
+  font-weight: 300;
+  font-style: oblique;
+}
+
+.contenedorSearch .btn-search {
+  position: absolute;
+}
+
+.contenedorSearch .btn-search:hover {
+  border-color: rgb(141, 141, 141);
+}
+
+.contenedorSearch2 .btn-search {
+  position: absolute;
+}
+
+.contenedorSearch2 {
+  padding-top: 10px;
+  width: 100%;
+  margin-left: 2px;
+  display: none;
+  position: relative;
+}
+
+.contenedorSearch2 input{
+  padding: 15px 10px;
+}
+
+/* GRID */
+.gridContainer {
+  margin-top: 10px;
+  width: 100%;
+  transition: 1s;
+  background-image:  linear-gradient(to right, #0f0c29, #302b63, #24243e);
+
+}
+
+.grid {
+  background-color: white;
+  width: 68%;
+  margin: 0 auto;
+  height: 55vh;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-areas: "departamentos subcategorias subcategorias";
+}
+
+.gridCategorias {
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  grid-area: departamentos;
+}
+
+.gridCategoriasTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: tomato;
+}
+
+.gridCategoriasItems {
+  list-style: none;
+  padding: 0px;
+  margin-top: 10px;
+}
+
+.gridCategoriasItems .gridCategoriasItem {
+  font-weight: 300;
+  font-size: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.137);
+  padding: 5px;
+  margin: 5px 0;
+  border-radius: 5px;
+  display: flex;
+  gap: 5px;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.gridCategoriasItems .gridCategoriasItem .itemLeft {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.arrowItem {
+  display: none;
+  font-size: 20px;
+}
+
+.gridCategoriasItems .gridCategoriasItem:hover .arrowItem {
+  display: block;
+  color: #000;
+}
+
+/* SUBCATEGORIA */
+.gridSubCategorias {
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  box-shadow: 0px 0px 13px -3px rgba(0, 0, 0, 0.144);
+}
+
+.gridSubCategorias .subCategoriaMarcas {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.subCategoriaMarcas .marcaItem {
+  font-size: 16px;
+  margin: 8px 0;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: 400;
+}
+
+.subCategoriaMarcas .marcaItem:hover {
+  text-decoration: underline;
+}
+
+/* gridGaleria */
+.gridGaleria {
+  width: 100%;
+  height: 55vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gridGaleria .gridGaleriaIMG {
+  width: 50%;
+  height: 50%;
+  background-color: rgb(0, 0, 0);
+  position: relative;
+  transition: 1s;
+}
+
+.gridGaleria .gridGaleriaIMG:hover .gridGaleriaDivImage .titleDivImage {
+  display: block;
+}
+
+.gridGaleria .gridGaleriaIMG:hover .gridGaleriaDivImage {
+  opacity: 0.8;
+}
+
+.gridGaleria .gridGaleriaIMG img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.gridGaleria .gridGaleriaIMG .gridGaleriaDivImage {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+  opacity: 0.5;
+}
+
+.gridGaleria .gridGaleriaIMG .gridGaleriaDivImage .titleDivImage {
+  display: none;
+  color: rgba(255, 255, 255, 0.651);
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-size: 40px;
+  font-family: "The Nautigal", cursive;
+  border: 1px dotted rgba(255, 255, 255, 0.863);
+  padding: 10% 25%;
+  border-radius: 50%;
+  transform: rotatez(-20deg);
+}
+
+/* MEDIA QUERYS */
+@media only screen and (max-width: 1500px) {
+  .navbarWrapper {
+    width: 100%;
+  }
+
+  .contenedorSearch {
+    width: 98%;
+  }
+
+  .grid{
+    width: 98%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .BtnMobile {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .btn-regresar{
+    display: block !important;
+  }
+  
+  .navbar {
+    height: 55px !important;
+  }
+
+  .prueba{
+    top: 0;
+  }
+
+  /* BUSCARDOR MOBILE */
+  .contenedorSearch {
+    display: none;
+  }
+  .contenedorSearch2 {
+    display: block;
+  }
+
+  .contenedorEnlaces {
+    width: 70% !important;
+    height: 100vh !important;
+    background-color: rgb(7, 1, 61);
+    position: absolute;
+    top: 0;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    flex-direction: column;
+    transform: translateX(-100%);
+    transition: 0.3s ease all;
+  }
+  .contenedorEnlaces.active {
+    transform: translate(0%);
+  }
+  .contenedorEnlaces .enlaces {
+    flex-direction: column;
+    width: 99%;
+  }
+  .logotiposCategorias {
+    color: tomato;
+    margin: 0 !important;
+  }
+  .logotiposCategorias .logotiposCategoriasIcon {
+    transform: rotate(-90deg);
+  }
+
+  /* CATEGORIAS/DEPARTAMENTOS STYLES MOBILE */
+  .grid {
+    transition: 0.3s ease all;
+    width: 70%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    background-color: rgb(7, 1, 61);
+    grid-template-areas: "departamentos departamentos departamentos";
+  }
+  .gridCategorias {
+    padding: 0;
+  }
+  .gridCategoriasTitle {
+    color: tomato;
+    margin: 8px;
+  }
+  .gridCategoriasItems {
+    padding: 0 8px;
+  }
+  .gridCategoriasItems .gridCategoriasItem {
+    border-color: rgb(148, 148, 148);
+    color: #fff;
+    margin: 10px 0;
+  }
+  .arrowItem {
+    display: block;
+    color: tomato;
+  }
+
+  /* SUBCATEGORIAS STYLES MOBILE */
+  .gridSubCategorias {
+    transform: translate(-100%);
+    width: 100%;
+    background-color: rgb(7, 1, 61);
+    height: 100vh;
+    position: absolute;
+    transition: 0.3s ease all;
+    padding: 0;
+  }
+  .gridSubCategorias.active {
+    transform: translate(0%);
+  }
+  .subCategoriaMarcas {
+    padding: 0 10px !important;
+  }
+  .subCategoriaMarcas .marcaItem {
+    color: #fff;
+  }
+
+  .gridGaleria {
+    display: none;
+  }
+}
+
+
+@media only screen and (max-width: 450px) {
+  .contenedorEnlaces{
+    width: 85% !important;
+  }
+}

@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;600;700&family=Source+Sans+Pro:wght@200;300;400;600&display=swap");
+
+.header {
+  width: 68%;
+  margin: 0 auto;
+}
+
+.headerWrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row: 2fr;
+  position: relative;
+}
+
+/* SLIDER */
+.headerImage{
+  width: 100%;
+  height: 500px;
+  background-color: aqua;
+  object-fit: 10;
+}
+
+.headerImage .carouselContainer{
+  background-color: tomato;
+  width: 100%;
+  margin: 0;
+}
+
+.headerImage .headerImageIMG {
+  width: 100%;
+  height: 500px;
+  cursor: pointer;
+  display: block;
+  object-fit: cover;
+}
+
+
+/* HEADER FLOTANTE BOX */
+.headerBoxContainer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 85%;
+  right: 25%;
+
+}
+
+.headerBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  width: 600px;
+  height: 280px;
+  box-shadow: 0px 4px 18px -3px rgba(0, 0, 0, 0.397);
+  padding: 0px 10px;
+
+}
+
+.headerBox .headerBoxTitle {
+  text-align: center;
+  font-size: 20px;
+  color: darkblue;
+  font-weight: 600;
+}
+.headerFiltrosAyuda {
+  margin-top: 15px;
+  gap: 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+/* FILTRO VEHICULOS CATEGORIAS */
+.categoriasVehiculos {
+  min-height: 160px;
+}
+.categoriasVehiculos .btnCategoriaVehiculo {
+  padding: 5px;
+  border: 1px solid darkblue;
+  color: darkblue;
+  margin-right: 5px;
+  border-radius: 5px;
+}
+.categoriasVehiculos .listaVehiculos {
+  list-style: none;
+  margin-top: 5px;
+  padding: 0;
+  border: 1px solid rgb(230, 230, 230);
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: auto;
+  max-width: 360px;
+}
+.categoriasVehiculos .listaVehiculos .itemVehiculo {
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.categoriasVehiculos .listaVehiculos .itemVehiculo:hover {
+  border-color: rgba(0, 0, 139, 0.63);
+}
+
+.categoriasVehiculos .listaVehiculos .itemVehiculo .imageVehiculo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+/* FILTRO VEHICULOS PRECIO MAXIMO */
+.filtroPrecioMax {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+.filtroPrecioMax .labelMaxPrice {
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 1200px) {
+  .header {
+    width: 100%;
+  }
+
+  .headerBoxContainer {
+    right: 20%;
+  }
+
+  .headerNosotros .bg {
+    transform: translateZ(0);
+    display: none;
+  }
+  .headerBox {
+    position: initial;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+    margin-top: 40px;
+    margin-bottom: 30px;
+  }
+
+  .headerWrapper {
+    grid-template-columns: 1fr;
+    margin: 0;
+  }
+
+  .headerNosotros .nosotrosTitle {
+    font-size: 27px;
+  }
+  .headerNosotros .listaHeader .listaTitle {
+    font-size: 16px;
+  }
+  .headerNosotros .listaHeader .listaItem {
+    font-size: 14px;
+  }
+
+  .headerBox {
+    width: 100%;
+    padding: 10px;
+    height: auto;
+  }
+
+  .headerFiltrosAyuda {
+    grid-template-columns: 1fr;
+    grid-template-columns: 2fr;
+  }
+
+  .categoriasVehiculos {
+    min-height: initial;
+    padding: 0 5px;
+  }
+
+  .categoriasVehiculos .listaVehiculos {
+    max-width: 300px;
+    height: auto;
+  }
+
+  .filtroPrecioMax {
+    display: none;
+  }
+}
+
+
+@media only screen and (max-width: 350px) {
+  .categoriasVehiculos .listaVehiculos {
+    max-width: 200px;
+    height: auto;
+  }
+}

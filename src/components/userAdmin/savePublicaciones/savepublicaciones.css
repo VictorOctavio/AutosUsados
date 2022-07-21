@@ -1,0 +1,85 @@
+.savePublicaciones {
+  background-color: rgb(231, 231, 231);
+}
+
+.savePublicacionesWrapper {
+  padding: 30px;
+}
+
+.savePublicacionesTitle {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.savePublicacionesTitle  .savePublicacionesNavegation{
+  display: flex;
+  gap: 5px;
+}
+.savePublicacionesTitle  .savePublicacionesNavegation .savePublicacionesNavegationIcon{
+  font-size: 30px;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.404);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.savePubliacacionesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-height: 80vh;
+  overflow: auto;
+}
+
+.savePubliacacionesList .savePublicacionItem {
+  width: 19rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+    overflow: hidden;
+}
+
+.savePubliacacionesList .savePublicacionItem:hover .savePublicacionItemImg {
+  transform: scale(140%);
+}
+
+.savePubliacacionesList .savePublicacionItem .savePublicacionItemImg {
+  width: 100%;
+  height: 250px;
+  transition: 0.3s;
+  object-fit: cover;
+}
+
+.savePublicacionItem .savePublicacionContent {
+  position: absolute;
+  width: 0%;
+  top: 0;
+  height: 0%;
+  background-color: rgb(0, 0, 0);
+  opacity: 0.7;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  transition: 0.3s ease-out all;
+}
+
+.savePublicacionItem .savePublicacionContent.active {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.savePublicacionContent .savePublicacionContentTitle {
+  font-size: 20px;
+  width: 18rem;
+  color: white;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: center;
+}

@@ -1,0 +1,70 @@
+/* .publicacionesUser{} */
+.publicacionesUserWrapper{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 100% 0%;
+    grid-template-rows: 1fr;
+    transition: .3s ease all;
+}
+.publicacionesUserWrapper.active{
+    grid-template-columns: 2fr 1.33fr;
+    grid-template-rows: 1fr;
+}
+
+.publicacionUserEdit{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: -6px -2px 28px -3px rgba(0,0,0,0.35);
+    padding: 0 10px;
+    transform: translateX(50%);
+    transition: .3s ease all;
+}
+.publicacionUserEdit.active{
+    transform: translateX(0);
+}
+.publicacionUserEdit .publicacionEditTitle{
+    color: #000;
+    font-size: 24px;
+    margin-top: 40px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.publicacionUserEdit .publicacionEditTitle .backMobile{
+    cursor: pointer;
+    display: none;
+}
+
+.publicacionUserEdit .publicacionEditInput .publicacionEditLabel{
+    color: tomato;
+    font-size: 14px;
+}
+
+.publicacionesUserList{
+    padding: 0 50px;
+}
+
+@media only screen and (max-width: 900px){
+    .publicacionesUserWrapper.active{
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr;
+        position: relative;
+    }
+
+    .publicacionesUserList{
+        padding: 0;
+    }
+
+    .publicacionUserEdit{
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        transform: translateX(100%);
+    }
+
+    .publicacionUserEdit .publicacionEditTitle .backMobile{
+        display: block;
+    }
+}

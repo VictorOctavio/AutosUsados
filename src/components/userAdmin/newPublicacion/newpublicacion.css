@@ -1,0 +1,160 @@
+.newpublicacion {
+  height: 100%;
+  padding: 20px;
+  position: relative;
+}
+.newpublicacionWrapper {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 20px;
+}
+
+/* Titulo */
+.formNewPublicacionTitle {
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.formNewPublicacionTitle b {
+  font-size: 14px;
+  font-weight: 400;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+
+/* FORMULARIO NUEVA PUBLICACION */
+.formNewPublicacion {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  height: 89vh;
+  padding: 20px;
+  box-shadow: 0px 4px 18px -3px rgba(0, 0, 0, 0.425);
+  overflow: auto;
+}
+
+.newpublicacionWrapper .viewCardMobile{
+  display: none;
+  width: 40px;
+  height: 40px;
+  background-color: tomato;
+  color: white;
+  border-radius: 50%;
+  border: none;
+}
+.newpublicacionWrapper .viewCardMobile .viewCardMobileIcon{
+  font-size: 25px;
+}
+.formNewPublicacion .labelForInput{
+  color: rgb(219, 56, 27);
+  font-size: 14px;
+  margin-bottom: -5px;
+  line-height: 15px;
+}
+.labelForConfirmacion{
+  position: absolute;
+  bottom: .5%;
+  margin-left: -20px;
+  background-color: rgb(243, 193, 193);
+  color: brown;
+  font-size: 14px;
+  width: 97.5% !important;
+  z-index: 100;
+  white-space: nowrap;
+  overflow: auto;
+  padding: 0 5px;
+}
+
+/* VISTA PUBLICACION */
+.VistaNewPublicacion {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  height: 89vh;
+  background-color: #292b2c;
+  overflow: auto;
+}
+
+.vistaNewPublicacionImage {
+  position: relative;
+}
+.vistaNewPublicacionImage .overlayImageCard {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.74);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.vistaNewPublicacionImage .overlayImageCard .overlayImageCardText {
+  font-size: 30px;
+  padding: 10px;
+  border-radius: 15px 0px;
+  border: 1px solid rgb(94, 94, 94);
+}
+
+/* MEDIAQUERIS */
+@media only screen and (max-width: 1100px) {
+  .newpublicacion {
+    padding: 20px 5px;
+  }
+  .formNewPublicacionTitle {
+    width: 97%;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .newpublicacion {
+    position: relative;
+  }
+
+  .newpublicacionWrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr;
+  }
+
+  .newpublicacionWrapper .viewCardMobile{
+    display: block;
+    position: absolute;
+    top: 94%;
+    right: 1%;
+  }
+
+  .formNewPublicacion {
+    padding: 0 5px;
+  }
+
+  .VistaNewPublicacion{
+    position: absolute;
+    transform: translateX(100%);
+    transition: .3s ease-in-out;
+    width: 100%;
+    height: 80%;
+  }
+  .VistaNewPublicacion.active{
+    transform: translateX(0);
+  }
+
+  .labelForConfirmacion{
+    display: none;
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+  .formNewPublicacionTitle {
+    font-size: 1em;
+  }
+}
