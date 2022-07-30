@@ -39,14 +39,14 @@
 }
 
 .publicacionesMenu .filtroPrecio {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.5fr;
   gap: 3px;
   padding: 10px 0;
 }
+
 .publicacionesMenu .filtroPrecio .input-filter {
-  width: 42%;
+  width: 100%;
   padding: 5px;
   border: 1px solid #ccc;
 }
@@ -160,10 +160,10 @@
 .publicacionesItems {
   margin-top: 18px;
   width: 100%;
+  gap: 5px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  justify-content: space-between;
   overflow-y: hidden !important;
 }
 .publicacionesItems .divCard {

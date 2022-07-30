@@ -433,10 +433,3 @@
     display: none;
   }
 }
-
-
-@media only screen and (max-width: 450px) {
-  .contenedorEnlaces{
-    width: 85% !important;
-  }
-}

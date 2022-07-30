@@ -44,24 +44,25 @@
   border-color: tomato;
 }
 
+
 /* INFORMACION DEL PRODUCTO */
 .productoInformacion {
   margin-top: 95px;
-  height: 81vh;
+  height: calc(100vh - 200px);
   box-shadow: 0px 4px 18px -3px rgba(0, 0, 0, 0.397);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   padding: 20px;
   padding-bottom: 0;
   background-color: white;
   width: 30%;
   position: fixed;
   right: 0;
-  transition: 0.3s;
+  transition: 1s;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 15% 85% 0%;
 }
 .productoInformacion.active {
-  bottom: 29%;
+  top: -200px;
 }
 
 .productoInformacion:hover .productoInformacionContacto .guardarPublicacion {
@@ -69,7 +70,7 @@
 }
 
 .productoInformacionHeader {
-  max-height: 72px;
+  max-height: 75%;
 }
 .productoInformacionHeader .productoInformacionTitle {
   margin: 0;
@@ -77,8 +78,8 @@
   font-weight: 600;
   color: darkblue;
   overflow: hidden;
-  /* text-overflow: ellipsis; */
-  /* white-space: nowrap; */
+  text-overflow: ellipsis;
+  white-space: wrap;
 }
 .productoInformacionHeader .productoInformacionSubTitle {
   height: 20px;
@@ -90,17 +91,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 12%;
   text-align: center;
+  display: none;
 }
 
 .productoInformacionFooter {
-  height: calc(85% - 100px);
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 70% 30%;
 }
+
 .productoInformacionFooter .productoInformacionDescripcion {
-  height: 65%;
   overflow-y: auto;
   margin-top: 10px;
 }
@@ -114,17 +115,16 @@
 }
 /* ----------- */
 .productoInformacionFooter .productoInformacionContacto {
-  height: 35%;
   margin-bottom: 8px;
+  overflow: auto;
 }
 .productoInformacionFooter .productoPrecio {
-  margin-top: 20px;
   font-size: 40px;
   display: flex;
   flex-direction: column;
 }
 .productoInformacionFooter .productoUnidad {
-  font-size: 14px;
+  font-size: 12px;
   margin-top: -10px;
   color: #adadad;
 }
@@ -227,10 +227,12 @@
 }
 
 @media only screen and (max-width: 800px) {
+
   .productoWrapper {
     grid-template-columns: 100%;
     grid-template-rows: 2fr;
   }
+
 
   .productoInformacionContacto .guardarPublicacion {
     opacity: 1;
@@ -246,6 +248,7 @@
     margin-top: 50px;
     position: initial;
     width: 100%;
+    grid-template-rows: 30% 70%;
   }
 
   .productoImage .productoImageIMG {
@@ -259,10 +262,26 @@
   .productoRecomendacionContainer {
     width: 100%;
   }
+
+  .productoRecomendacionArrow{
+    display: none;
+  }
+
+  .productoRecomendacion .recomendacionesCard {
+    overflow: auto;
+  }
 }
 
 @media only screen and (max-width: 500px) {
+  .productoInformacionBody {
+    display: none;
+  }
+
   .productoImage .productoImageIMG {
-    height: 30vh;
+    height: 35vh;
+  }
+
+  .productoImages .productoImageIMG {
+    height: 15vh;
   }
 }

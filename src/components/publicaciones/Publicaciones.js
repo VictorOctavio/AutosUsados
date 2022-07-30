@@ -30,6 +30,7 @@ function Publicaciones() {
     const publicaciones = useSelector(store => store.app.products) || null;
     const loading = useSelector(store => store.app.loading)
     const [filtrosQueryActive, setFiltrosQueryActive] = useState([]);
+    const [prices, setPrices] = useState({min:0, max:1000000000000});
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -52,7 +53,7 @@ function Publicaciones() {
         }
     }
 
-    //Search filtro 
+    //REALIZAR CONSULTAS ESPECIALZADAS
     const searchFiltro = (filterName, filter) => {
         if (filterName !== 'departamento') {
             let url = new URL(window.location.href);
@@ -74,6 +75,8 @@ function Publicaciones() {
         if (subMenuResult.classList.contains('active')) subMenuResult.classList.remove('active');
     }
 
+
+    //REMOVER ELEMENTOS DE BUSQUEDA ESPECIALIZADA
     const handleRemoveQuery = (filter) => {
         let url = new URL(window.location.href);
         url.searchParams.delete(filter.name);
@@ -82,6 +85,14 @@ function Publicaciones() {
         navigate(`${url.pathname}${url.search}`);
     }
 
+    //filtro precios
+    const changeFiltroPrices = (e) => {
+        e.preventDefault()
+        searchFiltro('minprice', {search: "minprice", value: prices.min})
+        searchFiltro('maxprice', {search: "maxprice", value: prices.max})
+    }
+
+    // NAVEGACION
     const fetchMoreData = () => {
         if (publicaciones.hasNextPage) {
             let url = new URL(window.location.href);
@@ -101,9 +112,9 @@ function Publicaciones() {
                     <div className='publicacionesMenuWrapper'>
                         <h6 className='publicacionesTitle'>Ayudanos a encontrar tu Vehiculo</h6>
 
-                        <form className='filtroPrecio'>
-                            <input className='input-filter' type="number" placeholder='min' />
-                            <input className='input-filter' type="number" placeholder='max' />
+                        <form className='filtroPrecio' onSubmit={changeFiltroPrices}>
+                            <input className='input-filter' type="number" placeholder='min' onChange={e=>setPrices({...prices, min:e.target.value})}/>
+                            <input className='input-filter' type="number" placeholder='max' onChange={e=>setPrices({...prices, max:e.target.value})}/>
                             <button className='btn btn-dark btn-sm'><RiSearch2Line /></button>
                         </form>
 

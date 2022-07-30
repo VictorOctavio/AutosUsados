@@ -10,11 +10,12 @@ import chopper from '../../assets/categorias/chopper.svg'
 import cuidad from '../../assets/categorias/cuidad.svg'
 import motocross from '../../assets/categorias/motocross.svg'
 import viaje from '../../assets/categorias/viaje.svg'
+import hatch from '../../assets/categorias/hatch.svg'
 
 export const data = [
     [
         {
-            categoria: 'pickup truck',
+            categoria: 'tracker',
             iconSVG: pickup
         }, {
             categoria: 'convertibles',
@@ -31,6 +32,9 @@ export const data = [
         }, {
             categoria: 'suv',
             iconSVG: suv
+        }, {
+            categoria: 'hatchback',
+            iconSVG: hatch
         }
     ],
     [

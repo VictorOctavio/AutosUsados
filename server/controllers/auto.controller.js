@@ -76,8 +76,8 @@ export const getPublicacion = async (req, res) => {
         if (!auto) return res.json({ err: true, message: 'Publicación no existente' });
 
         //Tomar Referencia
-        let referencia0 = 150000;
-        let referencia1 = 1000;
+        let referencia0 = 200000;
+        let referencia1 = 800;
 
         //Relacionados segun el precio caso dolar y caso peso
         let relacionado1;
@@ -85,14 +85,14 @@ export const getPublicacion = async (req, res) => {
             relacionado1 = await Auto.find({
                 tipoPublicacion: auto.tipoPublicacion,
                 $or: [{ unidadPrecio: "peso", precio: { $lte: auto.precio * + referencia0 } },
-                { unidadPrecio: "dolar", precio: { $lte: auto.precio / 210 + referencia1 } }]
+                { unidadPrecio: "dolar", precio: { $lte: auto.precio / 310 + referencia1 } }]
             }).sort('-createAt')
 
         } else {
             relacionado1 = await Auto.find({
                 tipoPublicacion: auto.tipoPublicacion,
-                $or: [{ unidadPrecio: "peso", precio: { $lte: auto.precio * 210 + referencia0 } },
-                { unidadPrecio: "dolar", precio: { $lte: auto.precio + 1000 } }]
+                $or: [{ unidadPrecio: "peso", precio: { $lte: auto.precio * 310 + referencia0 } },
+                { unidadPrecio: "dolar", precio: { $lte: auto.precio + referencia1 } }]
             }).sort('-createAt')
         }
 
@@ -142,7 +142,7 @@ export const getPublicaciones = async (req, res) => {
 
         //Obtener querys(filtros)
         const { id = 'all' } = req.params;
-        const { limit = 20, page = 1, sort = '-createdAt' } = req.query;
+        const { limit = 21, page = 1, sort = '-createdAt' } = req.query;
 
         let data = [];
         let recomedacionesHistorial = [];

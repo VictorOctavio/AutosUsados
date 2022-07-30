@@ -9,6 +9,9 @@ import { AiFillCar, AiFillCalendar } from 'react-icons/ai';
 import { GiCartwheel, GiLever } from 'react-icons/gi';
 import {FaMotorcycle} from 'react-icons/fa';
 
+import moment from 'moment'
+import 'moment/locale/es';
+
 function Card({ producto, recomendacion }) {
 
     const navigate = useNavigate();
@@ -36,7 +39,7 @@ function Card({ producto, recomendacion }) {
                 <img className='imageCard' src={producto.imagesURL[0]} alt={producto.titulo} />
 
                 <div className='cardAutoOverlay'>
-                    {itemOverlay(producto.carroceria === 'auto' ? <AiFillCar className='iconOverlay' />:<FaMotorcycle className='iconOverlay'/>, 'carroceria')}
+                    {itemOverlay(producto.tipoPublicacion === 'auto' ? <AiFillCar className='iconOverlay' />:<FaMotorcycle className='iconOverlay'/>, 'carroceria')}
                     {itemOverlay(<GiCartwheel className='iconOverlay' />, 'kilometros')}
                     {itemOverlay(<GiLever className='iconOverlay' />, 'transmision')}
                     {itemOverlay(<AiFillCalendar className='iconOverlay' />, 'modelo')}
@@ -48,10 +51,12 @@ function Card({ producto, recomendacion }) {
             >
                 <h6 style={recomendacion ? {width: '240px'}:{width: '280px'}} className='cardAutoTitulo' title={producto.titulo}>{producto.titulo.toUpperCase()}</h6>
                 <div className='cardAutoInfo'>
-                    <span className='fechaPublicacion'>Hace 3 días</span>
+                    <span className='fechaPublicacion'>
+                        {moment(producto.updatedAt).endOf().fromNow()}
+                    </span>
 
                     <p className='precioPublicacion'>
-                        {producto.unidadPrecio !== 'peso' && 'USD'}${producto.precio}
+                        {producto.unidadPrecio !== 'peso' &&'USD'}${producto.precio}
                     </p>
                 </div>
                 

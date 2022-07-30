@@ -14,11 +14,10 @@ export const recomedaciones = (title, subtitle, products) => {
 
     const moveScroll = (move) => {
         const divRecomendaciones = document.querySelector('.recomendacionesCard');
-        console.log(divRecomendaciones.scroll)
         if (move === 'left') {
-            divRecomendaciones.scrollLeft = divRecomendaciones.scrollLeft-2000;
+            divRecomendaciones.scrollLeft = divRecomendaciones.scrollLeft - 2000;
         } else {
-            divRecomendaciones.scrollLeft =  divRecomendaciones.scrollLeft+2000;
+            divRecomendaciones.scrollLeft = divRecomendaciones.scrollLeft + 2000;
         }
     }
 
@@ -40,19 +39,23 @@ export const recomedaciones = (title, subtitle, products) => {
                     'No hay publicaciones relacionadas'
                 )}
             </div>
-            <button className='productoRecomendacionArrow left'>
-                <IoIosArrowBack className='productoRecomendacionArrowItem' onClick={() => moveScroll('left')} />
-            </button>
-            <button className='productoRecomendacionArrow right' onClick={() => moveScroll('right')}>
-                <IoIosArrowForward className='productoRecomendacionArrowItem' />
-            </button>
+
+            {products.length > 2 && (
+                <React.Fragment>
+                    <button className='productoRecomendacionArrow left'>
+                        <IoIosArrowBack className='productoRecomendacionArrowItem' onClick={() => moveScroll('left')} />
+                    </button>
+                    <button className='productoRecomendacionArrow right' onClick={() => moveScroll('right')}>
+                        <IoIosArrowForward className='productoRecomendacionArrowItem' />
+                    </button>
+                </React.Fragment>
+            )}
+
         </div>
     )
 }
 
 function Producto2({ producto }) {
-
-    console.log(producto)
 
     // State
     const [imgActive, setImgActive] = useState(producto.imagesURL[0]);
@@ -62,8 +65,8 @@ function Producto2({ producto }) {
     const scr = () => {
         const divInformacion = document.querySelector('#divInfo');
         if (divInformacion) {
-            if (window.scrollY < 2000) divInformacion.classList.remove('active');
-            if (window.scrollY > 1210) divInformacion.classList.add('active');
+            if (window.scrollY < 1230) divInformacion.classList.remove('active');
+            if (window.scrollY > 1230) divInformacion.classList.add('active');
         }
     }
 
@@ -106,7 +109,7 @@ function Producto2({ producto }) {
                         <div className='productoInformacionDescripcion'>
                             <h3 className='descripcionTitle'>Descripción</h3>
                             <div className='productoInformacionDescripcionContent'>
-                                {!producto.descripcion.length <= 3 ? 'El usuario no incluyó descripción.' : <div dangerouslySetInnerHTML={createMarkup()}></div>}
+                                {producto.descripcion.length <= 3 ? 'El usuario no incluyó descripción.' : <div dangerouslySetInnerHTML={createMarkup()}></div>}
                             </div>
                         </div>
 
@@ -118,7 +121,7 @@ function Producto2({ producto }) {
                             </span>
 
                             <div className='contactoEnlaces'>
-                                <a href={`https://api.whatsapp.com/send?phone=${'252'}&text=¿Sigue%20Disponible%20${producto.titulo}?`} target='_black' className='btn-lg btn btn-success'>
+                                <a href={`https://api.whatsapp.com/send?phone=54${producto.user.telefono}&text=¿Sigue%20Disponible%20${producto.titulo}?`} target='_black' className='btn-lg btn btn-success'>
                                     <BsWhatsapp className='mb-1' /> Contactar
                                 </a>
                                 <div onClick={handleGuardarPublicación} className='guardarPublicacion' title='Guardar Publicación' ref={el => heartIcon = el}>
@@ -127,7 +130,6 @@ function Producto2({ producto }) {
                                     />
                                 </div>
                             </div>
-
                         </div>
                     </div>
 

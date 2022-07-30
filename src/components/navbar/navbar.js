@@ -29,8 +29,6 @@ export default function Navbar({
         </li>
     );
 
-    console.log(gridData)
-
     //Enlace de marcas de los deparamentos
     const enlaceMarca = (nombre) => <NavLink key={nombre} onClick={() => setGrid(false)} className="marcaItem" 
     to={`/publicaciones/${gridData.title}?${gridData.title==='accesorio'?'carroceria':'marca'}=${nombre}`}>
